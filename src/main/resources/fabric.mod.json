@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "orebuff",
+	"version": "${version}",
+	"name": "OreBuff",
+	"description": "A simple mod that makes several ores drop more raw ores by default (without using fortune). It does this by modifying loot tables of the ores. Enabling/disabling certain ores and setting their rates can be done in the config.",
+	"authors": [
+		"NoSlimesJustCats"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT License",
+	"icon": "assets/orebuff/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.noslimes.orebuff.OreBuff"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.14.24",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
