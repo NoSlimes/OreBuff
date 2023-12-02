@@ -1,6 +1,7 @@
 package com.noslimes.orebuff.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.noslimes.orebuff.OreBuff;
 import net.fabricmc.loader.api.FabricLoader;
 
 import java.io.File;
@@ -53,6 +54,7 @@ public class ModConfigManager {
     private static void handleConfigException(IOException e, String errorMessage) {
         // Handle the exception according to your application's requirements
         e.printStackTrace();
+        OreBuff.LOGGER.warn(errorMessage);
         // Example: Log the error or notify the user
     }
 }

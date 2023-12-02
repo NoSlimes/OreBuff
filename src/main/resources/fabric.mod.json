@@ -8,8 +8,8 @@
 		"NoSlimesJustCats"
 	],
 	"contact": {
-		"homepage": "",
-		"sources": ""
+		"homepage": "http://noslimes.com/",
+		"sources": "https://github.com/NoSlimes/OreBuff"
 	},
 	"license": "MIT License",
 	"icon": "assets/orebuff/icon.png",

@@ -1,109 +1,73 @@
 package com.noslimes.orebuff.config;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.item.Items;
+import net.minecraft.util.Identifier;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class ModConfig {
-    //public OreConfig[] oreConfigs = new OreConfig[10];
 
-    public boolean enableCoal, enableDeepslateCoal;
-    public float coalChance;
-    public int coalMinCount, coalMaxCount;
-
-    public boolean enableIron, enableDeepslateIron;
-    public float ironChance;
-    public int ironMinCount, ironMaxCount;
-
-    public boolean enableCopper, enableDeepslateCopper;
-    public float copperChance;
-    public int copperMinCount, copperMaxCount;
-
-    public boolean enableGold, enableDeepslateGold;
-    public float goldChance;
-    public int goldMinCount, goldMaxCount;
-
-    public boolean enableLapis, enableDeepslateLapis;
-    public float lapisChance;
-    public int lapisMinCount, lapisMaxCount;
-
-    public boolean enableRedstone, enableDeepslateRedstone;
-    public float redstoneChance;
-    public int redstoneMinCount, redstoneMaxCount;
-
-    public boolean enableEmerald, enableDeepslateEmerald;
-    public float emeraldChance;
-    public int emeraldMinCount, emeraldMaxCount;
-
-    public boolean enableDiamond, enableDeepslateDiamond;
-    public float diamondChance;
-    public int diamondMinCount, diamondMaxCount;
-
-    public  boolean enableQuartz;
-    public float quartzChance;
-    public int quartzMinCount, quartzMaxCount;
-
-    public boolean enableAncientDebris;
-    public float ancientDebrisChance;
-    public int ancientDebrisMinCount, ancientDebrisMaxCount;
+    private final Map<Identifier, OreConfig> oreConfigs = new HashMap<>();
 
     public ModConfig() {
         // Set default values
+        setOreConfig(Blocks.COAL_ORE.getLootTableId(), Items.COAL.toString(), true, 0.5f, 1, 2);
+        setOreConfig(Blocks.DEEPSLATE_COAL_ORE.getLootTableId(), Items.COAL.toString(), true, 0.5f, 1, 2);
 
-        enableCoal = true;
-        enableDeepslateCoal = true;
-        coalChance = 0.5f;
-        coalMinCount = 1;
-        coalMaxCount = 2;
+        setOreConfig(Blocks.IRON_ORE.getLootTableId(), Items.RAW_IRON.toString(), true, 0.35f, 1, 1);
+        setOreConfig(Blocks.DEEPSLATE_IRON_ORE.getLootTableId(), Items.RAW_IRON.toString(), true, 0.35f, 1, 1);
 
-        enableIron = true;
-        enableDeepslateIron = true;
-        ironChance = 0.35f;
-        ironMinCount = 1;
-        ironMaxCount = 1;
+        setOreConfig(Blocks.COPPER_ORE.getLootTableId(), Items.RAW_COPPER.toString(), false, 0.35f, 1, 2);
+        setOreConfig(Blocks.DEEPSLATE_COPPER_ORE.getLootTableId(), Items.RAW_COPPER.toString(), false, 0.35f, 1, 2);
 
-        enableCopper = false;
-        enableDeepslateCopper = false;
-        copperChance = 0.35f;
-        copperMinCount = 1;
-        copperMaxCount = 2;
+        setOreConfig(Blocks.GOLD_ORE.getLootTableId(), Items.RAW_GOLD.toString(), true, 0.35f, 1, 1);
+        setOreConfig(Blocks.DEEPSLATE_GOLD_ORE.getLootTableId(), Items.RAW_GOLD.toString(), true, 0.35f, 1, 1);
 
-        enableGold = true;
-        enableDeepslateGold = true;
-        goldChance = 0.35f;
-        goldMinCount = 1;
-        goldMaxCount = 1;
+        setOreConfig(Blocks.LAPIS_ORE.getLootTableId(), Items.LAPIS_LAZULI.toString(), false, 0.35f, 1, 2);
+        setOreConfig(Blocks.DEEPSLATE_LAPIS_ORE.getLootTableId(), Items.LAPIS_LAZULI.toString(), false, 0.35f, 1, 2);
 
-        enableLapis = false;
-        enableDeepslateLapis = false;
-        lapisChance = 0.35f;
-        lapisMinCount = 1;
-        lapisMaxCount = 2;
+        setOreConfig(Blocks.REDSTONE_ORE.getLootTableId(), Items.REDSTONE.toString(), false, 0.35f, 1, 3);
+        setOreConfig(Blocks.DEEPSLATE_REDSTONE_ORE.getLootTableId(), Items.REDSTONE.toString(), false, 0.35f, 1, 3);
 
-        enableRedstone = false;
-        enableDeepslateRedstone = false;
-        redstoneChance = 0.35f;
-        redstoneMinCount = 1;
-        redstoneMaxCount = 3;
+        setOreConfig(Blocks.EMERALD_ORE.getLootTableId(), Items.EMERALD.toString(), false, 0.15f, 1, 1);
+        setOreConfig(Blocks.DEEPSLATE_EMERALD_ORE.getLootTableId(), Items.EMERALD.toString(), false, 0.15f, 1, 1);
 
-        enableEmerald = false;
-        enableDeepslateEmerald = false;
-        emeraldChance = 0.15f;
-        emeraldMinCount = 1;
-        emeraldMaxCount = 1;
+        setOreConfig(Blocks.DIAMOND_ORE.getLootTableId(), Items.DIAMOND.toString(), false, 0.15f, 1, 1);
+        setOreConfig(Blocks.DEEPSLATE_DIAMOND_ORE.getLootTableId(), Items.DIAMOND.toString(), false, 0.15f, 1, 1);
 
-        enableDiamond = false;
-        enableDeepslateDiamond = false;
-        diamondChance = 0.15f;
-        diamondMinCount = 1;
-        diamondMaxCount = 1;
+        setOreConfig(Blocks.NETHER_QUARTZ_ORE.getLootTableId(), Items.QUARTZ.toString(), true,0.35f, 1, 2);
 
-        enableQuartz = true;
-        quartzChance = 0.35f;
-        quartzMinCount = 1;
-        quartzMaxCount = 2;
-
-        enableAncientDebris = false;
-        ancientDebrisChance = 0.05f;
-        ancientDebrisMinCount = 1;
-        ancientDebrisMaxCount = 1;
+        setOreConfig(Blocks.ANCIENT_DEBRIS.getLootTableId(), Items.NETHERITE_SCRAP.toString(), false, 0.05f, 1, 1);
     }
+
+    public Map<Identifier, OreConfig> getOreConfigs(){
+        return oreConfigs;
+    }
+
+    private void setOreConfig(Identifier oreName, String itemName, boolean enable, float chance, int minCount, int maxCount) {
+        oreConfigs.put(oreName, new OreConfig(itemName, enable, chance, minCount, maxCount));
+    }
+
+    public static class OreConfig {
+        public String itemName;
+        public boolean enable;
+        public float chance;
+        public int minDrop, maxDrop;
+
+        // Add a default constructor
+        public OreConfig() {
+            // Default constructor
+        }
+
+        public OreConfig(String itemName, boolean enable, float chance, int minDrop, int maxDrop) {
+            this.itemName = itemName;
+            this.enable = enable;
+            this.chance = chance;
+            this.minDrop = minDrop;
+            this.maxDrop = maxDrop;
+        }
+    }
+
 }
-
-
