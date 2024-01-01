@@ -53,6 +53,7 @@ public class ModConfig {
     public static class OreConfig {
         public String itemName;
         public boolean enable;
+        public boolean replace;
         public float chance;
         public int minDrop, maxDrop;
 
@@ -61,9 +62,10 @@ public class ModConfig {
             // Default constructor
         }
 
-        public OreConfig(String itemName, boolean enable, float chance, int minDrop, int maxDrop) {
+        public OreConfig(String itemName, boolean enable, boolean replace, float chance, int minDrop, int maxDrop) {
             this.itemName = itemName;
             this.enable = enable;
+            this.replace = replace;
             this.chance = chance;
             this.minDrop = minDrop;
             this.maxDrop = maxDrop;

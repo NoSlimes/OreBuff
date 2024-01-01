@@ -52,7 +52,12 @@ public class ModOreLootTableModifiers {
             int dropMinCount = entry.getValue().minDrop;
             int dropMaxCount = entry.getValue().maxDrop;
 
-            registerLootTableModification(blockID, item, enable, dropChance, dropMinCount, dropMaxCount);
+            if(entry.getValue().replace) {
+                registerLootTableReplacement(blockID, item, enable, dropChance, dropMinCount, dropMaxCount);
+            }
+            else {
+                registerLootTableModification(blockID, item, enable, dropChance, dropMinCount, dropMaxCount);
+            }
         }
 
         OreBuff.LOGGER.info("Ore loot tables modified!");
@@ -101,4 +106,22 @@ public class ModOreLootTableModifiers {
 
         });
     }
+
+    //Not yet working!!
+    public static void registerLootTableReplacement(Identifier lootTableId, Item dropItem, boolean enableModification, float dropChance, int dropMinCount, int dropMaxCount) {
+        LootTableEvents.REPLACE.register((resourceManager, lootManager, id, lootTable, source) -> {
+            if (source.isBuiltin() && lootTableId.equals(id) && enableModification) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1f))
+                        .conditionally(RandomChanceWithLootingLootCondition.builder(dropChance, 1.5f).build())
+                        .conditionally(InvertedLootCondition.builder(MatchToolLootCondition.builder(ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, NumberRange.IntRange.ANY)))))
+                        .with(ItemEntry.builder(dropItem))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(dropMinCount, dropMaxCount)).build());
+
+
+            }
+            return null;
+        });
+    }
+
 }
