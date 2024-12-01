@@ -13,7 +13,7 @@ public class ModConfig {
 
     public ModConfig() {
         // Set default values
-        setOreConfig(Blocks.COAL_ORE.getLootTableId(), Items.COAL.toString(), true, false, 0.5f, 2);
+        setOreConfig(Identifier.of(Blocks.COAL_ORE), Items.COAL.toString(), true, false, 0.5f, 2);
         setOreConfig(Blocks.DEEPSLATE_COAL_ORE.getLootTableId(), Items.COAL.toString(), true, false, 0.5f, 2);
 
         setOreConfig(Blocks.IRON_ORE.getLootTableId(), Items.RAW_IRON.toString(), true, false, 0.35f, 1);

@@ -3,11 +3,8 @@ package com.noslimes.orebuff.util;
 
 import com.noslimes.orebuff.OreBuff;
 import com.noslimes.orebuff.config.ModConfigManager;
-import io.netty.handler.ssl.IdentityCipherSuiteFilter;
-import joptsimple.util.KeyValuePair;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
@@ -20,8 +17,6 @@ import net.minecraft.predicate.NumberRange;
 import net.minecraft.predicate.item.EnchantmentPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryEntryLookup;
 import net.minecraft.util.Identifier;
 
 public class ModOreLootTableModifiers {
