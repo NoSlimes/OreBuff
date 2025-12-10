@@ -4,6 +4,7 @@ import com.noslimes.orebuff.OreBuff;
 import com.noslimes.orebuff.config.ModConfigManager;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.block.Block;
+import net.minecraft.item.Item;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.condition.InvertedLootCondition;
@@ -18,7 +19,6 @@ import net.minecraft.predicate.item.EnchantmentPredicate;
 import net.minecraft.predicate.item.ItemPredicate;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
-import net.minecraft.item.Item;
 
 public class ModOreLootTableModifiers {
     public static void modifyLootTables() {

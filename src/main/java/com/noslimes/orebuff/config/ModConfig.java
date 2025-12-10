@@ -38,7 +38,7 @@ public class ModConfig {
         setOreConfig(Blocks.DIAMOND_ORE.getLootTableId(), Registries.ITEM.getId(Items.DIAMOND).toString(), false, false, 0.15f, 1);
         setOreConfig(Blocks.DEEPSLATE_DIAMOND_ORE.getLootTableId(), Registries.ITEM.getId(Items.DIAMOND).toString(), false, false, 0.15f, 1);
 
-        setOreConfig(Blocks.NETHER_QUARTZ_ORE.getLootTableId(), Registries.ITEM.getId(Items.QUARTZ).toString(), true, false,0.35f, 2);
+        setOreConfig(Blocks.NETHER_QUARTZ_ORE.getLootTableId(), Registries.ITEM.getId(Items.QUARTZ).toString(), true, false, 0.35f, 2);
 
         setOreConfig(Blocks.ANCIENT_DEBRIS.getLootTableId(), Registries.ITEM.getId(Items.NETHERITE_SCRAP).toString(), false, false, 0.05f, 1);
     }
